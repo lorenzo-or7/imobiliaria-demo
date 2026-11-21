@@ -1,0 +1,48 @@
+.toolbar {
+  position: sticky;
+  top: 88px;
+  z-index: 5;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px 24px;
+  padding: 10px 10px 10px 20px;
+  margin-bottom: 40px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-pill);
+  background: color-mix(in srgb, var(--surface) 94%, transparent);
+  backdrop-filter: blur(10px);
+}
+
+.item {
+  display: grid;
+  gap: 12px;
+}
+
+.select {
+  min-height: 44px;
+  align-items: center;
+  font-size: 0.875rem;
+}
+
+.select input {
+  margin: 0;
+}
+
+.suggest {
+  margin-top: var(--section-y);
+  display: grid;
+  gap: 32px;
+}
+
+@media (max-width: 560px) {
+  .toolbar {
+    border-radius: var(--radius-md);
+    top: 84px;
+  }
+
+  .toolbar button {
+    width: 100%;
+  }
+}

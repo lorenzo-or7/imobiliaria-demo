@@ -1,0 +1,38 @@
+.dialog {
+  width: min(520px, calc(100vw - 24px));
+  margin: auto;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-float);
+}
+
+.dialog[open] {
+  animation: pop 320ms var(--ease-out);
+}
+
+@keyframes pop {
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(0.98);
+  }
+}
+
+.inner {
+  display: grid;
+  gap: 14px;
+  padding: 20px 24px 24px;
+}
+
+.top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-right: -10px;
+}
+
+.title {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  font-size: 1.75rem;
+}

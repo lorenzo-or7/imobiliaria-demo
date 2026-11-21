@@ -1,0 +1,143 @@
+.card {
+  position: relative;
+  display: grid;
+  gap: 18px;
+  align-content: start;
+}
+
+.mediaWrap {
+  position: relative;
+}
+
+.media {
+  display: block;
+  overflow: hidden;
+  aspect-ratio: 4 / 3;
+  background: var(--surface-2);
+}
+
+.media img,
+.media > span {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 900ms var(--ease-out), filter 400ms var(--ease-out);
+}
+
+.card:hover .media img {
+  transform: scale(1.045);
+}
+
+.badge {
+  position: absolute;
+  left: 12px;
+  top: 12px;
+  padding: 5px 11px;
+  border-radius: var(--radius-pill);
+  background: color-mix(in srgb, var(--surface) 90%, transparent);
+  backdrop-filter: blur(6px);
+  font-size: 0.75rem;
+  font-weight: 500;
+  pointer-events: none;
+}
+
+.fav {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
+
+.body {
+  display: grid;
+  gap: 6px;
+  align-content: start;
+}
+
+.where {
+  font-size: 0.8125rem;
+  color: var(--text-2);
+}
+
+.title {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  font-size: clamp(1.5rem, 2vw, 1.875rem);
+  line-height: 1.1;
+}
+
+.titleLink {
+  text-decoration: none;
+  background-image: linear-gradient(currentColor, currentColor);
+  background-size: 0% 1px;
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  transition: background-size 500ms var(--ease-out);
+}
+
+.card:hover .titleLink,
+.titleLink:focus-visible {
+  background-size: 100% 1px;
+}
+
+.tagline {
+  color: var(--text-2);
+  max-width: 44ch;
+}
+
+.price {
+  margin-top: 4px;
+  font-weight: 500;
+  font-size: 1.0625rem;
+}
+
+.specs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 18px;
+  list-style: none;
+  font-size: 0.875rem;
+  color: var(--text-2);
+}
+
+.specs li {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.cmp {
+  min-height: 40px;
+  padding: 0 14px;
+}
+
+/* Lista: foto à esquerda, conteúdo à direita */
+.list {
+  grid-template-columns: minmax(200px, 360px) 1fr;
+  gap: clamp(18px, 3vw, 40px);
+  padding-bottom: 28px;
+  border-bottom: 1px solid var(--border);
+}
+
+.list .media {
+  aspect-ratio: 3 / 2;
+}
+
+.list .body {
+  padding-top: 4px;
+}
+
+.list .title {
+  font-size: clamp(1.75rem, 2.4vw, 2.25rem);
+}
+
+@media (max-width: 640px) {
+  .list {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,263 @@
+.page {
+  padding-bottom: var(--section-y);
+}
+
+.head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: end;
+  justify-content: space-between;
+  gap: 24px 48px;
+  padding-bottom: 32px;
+  margin-bottom: 40px;
+  border-bottom: 1px solid var(--border);
+}
+
+.search {
+  position: relative;
+  flex: 1 1 360px;
+  max-width: 520px;
+}
+
+.searchIcon {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  translate: 0 -50%;
+  color: var(--text-2);
+  pointer-events: none;
+}
+
+.searchInput {
+  padding-left: 46px;
+  padding-right: 48px;
+  border-radius: var(--radius-pill);
+  min-height: 52px;
+}
+
+.searchInput::-webkit-search-cancel-button {
+  display: none;
+}
+
+.clearQ {
+  position: absolute;
+  right: 4px;
+  top: 50%;
+  translate: 0 -50%;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 300px minmax(0, 1fr);
+  gap: clamp(32px, 4vw, 64px);
+  align-items: start;
+}
+
+.sidebar {
+  position: sticky;
+  top: 100px;
+  max-height: calc(100vh - 120px);
+  overflow-y: auto;
+  padding: 4px 12px 24px 4px;
+  scrollbar-width: thin;
+}
+
+.sideHead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.sideTitle {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  font-size: 1.75rem;
+}
+
+.results {
+  min-width: 0;
+}
+
+.toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px 24px;
+  margin-bottom: 20px;
+}
+
+.count {
+  font-size: 1rem;
+}
+
+.count strong {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  font-size: 1.75rem;
+  margin-right: 4px;
+}
+
+.tools {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
+
+.filterBtn {
+  display: none;
+}
+
+.sort {
+  width: auto;
+  min-height: 48px;
+  border-radius: var(--radius-pill);
+  padding-left: 18px;
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  list-style: none;
+  margin-bottom: 28px;
+}
+
+.activeChip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 36px;
+  padding: 0 12px 0 14px;
+  border: 0;
+  border-radius: var(--radius-pill);
+  background: var(--accent-soft);
+  font-size: 0.8125rem;
+  transition: background-color var(--dur-fast);
+}
+
+.activeChip:hover {
+  background: var(--surface-2);
+  text-decoration: line-through;
+}
+
+.grid {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 280px), 1fr));
+  gap: 56px clamp(16px, 2vw, 28px);
+}
+
+.list {
+  grid-template-columns: 1fr;
+  gap: 28px;
+}
+
+.more {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  margin-top: 56px;
+}
+
+.suggest {
+  display: grid;
+  gap: 12px;
+  justify-items: center;
+}
+
+.suggestChips {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+}
+
+/* Gaveta de filtros (tablet e mobile) */
+.drawer {
+  width: min(440px, 100vw);
+  height: 100%;
+  max-height: 100%;
+  margin: 0 0 0 auto;
+  background: var(--bg);
+}
+
+.drawer[open] {
+  animation: drawer-in 380ms var(--ease-out);
+}
+
+@keyframes drawer-in {
+  from {
+    transform: translateX(40px);
+    opacity: 0;
+  }
+}
+
+.drawerInner {
+  height: 100%;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+
+.drawerHead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 16px 16px 24px;
+  border-bottom: 1px solid var(--border);
+}
+
+.drawerBody {
+  overflow-y: auto;
+  padding: 24px;
+  overscroll-behavior: contain;
+}
+
+.drawerFoot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 16px 24px max(16px, env(safe-area-inset-bottom));
+  border-top: 1px solid var(--border);
+}
+
+@media (max-width: 1023px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar {
+    display: none;
+  }
+
+  .filterBtn {
+    display: inline-flex;
+  }
+}
+
+@media (max-width: 560px) {
+  .toolbar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .tools {
+    display: grid;
+    grid-template-columns: 1fr auto;
+  }
+
+  .sort {
+    width: 100%;
+    grid-column: 1 / -1;
+    order: 3;
+  }
+
+  .drawer {
+    width: 100vw;
+  }
+}

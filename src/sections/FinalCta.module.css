@@ -1,0 +1,85 @@
+.band {
+  background: var(--band-bg);
+  color: var(--band-text);
+  padding-block: clamp(80px, 11vw, 168px);
+  overflow: hidden;
+}
+
+[data-theme='dark'] .band {
+  border-top: 1px solid var(--border);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+  gap: clamp(40px, 6vw, 96px);
+  align-items: end;
+}
+
+.copy {
+  display: grid;
+  gap: 28px;
+  justify-items: start;
+}
+
+.text {
+  max-width: 40ch;
+  color: var(--band-text-2);
+  font-size: 1.125rem;
+}
+
+.ctas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.primary {
+  --btn-bg: var(--band-text);
+  --btn-fg: #222520;
+  --btn-border: var(--band-text);
+}
+
+.primary:hover {
+  --btn-bg: #a6b8a3;
+  --btn-border: #a6b8a3;
+}
+
+.ghost {
+  --btn-fg: var(--band-text);
+  --btn-border: rgba(241, 239, 233, 0.4);
+}
+
+.ghost:hover {
+  --btn-border: var(--band-text);
+  --btn-bg: rgba(241, 239, 233, 0.08);
+}
+
+.media {
+  aspect-ratio: 4 / 5;
+}
+
+.media :global(.ir__cover) {
+  background: var(--band-bg);
+}
+
+.media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.band :focus-visible {
+  outline-color: var(--band-text);
+}
+
+@media (max-width: 1023px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .media {
+    aspect-ratio: 4 / 3;
+  }
+}

@@ -1,0 +1,32 @@
+.page {
+  padding-bottom: var(--section-y);
+}
+
+.header {
+  display: grid;
+  grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+  gap: 24px 64px;
+  align-items: end;
+  padding-bottom: clamp(32px, 4vw, 56px);
+  margin-bottom: clamp(32px, 4vw, 56px);
+  border-bottom: 1px solid var(--border);
+}
+
+.header > :last-child {
+  display: grid;
+  gap: 16px;
+  justify-items: start;
+}
+
+.grid {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr));
+  gap: 56px clamp(16px, 2vw, 28px);
+}
+
+@media (max-width: 860px) {
+  .header {
+    grid-template-columns: 1fr;
+  }
+}

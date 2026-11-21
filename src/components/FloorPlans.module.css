@@ -1,0 +1,102 @@
+.wrap {
+  display: grid;
+  gap: 16px;
+  justify-items: start;
+}
+
+.figure {
+  width: 100%;
+  padding: clamp(16px, 3vw, 32px);
+  background: var(--surface);
+  border: 1px solid var(--border);
+}
+
+.svg {
+  width: 100%;
+  height: auto;
+}
+
+.outline {
+  fill: none;
+  stroke: var(--text);
+  stroke-width: 1;
+}
+
+.room {
+  stroke: var(--text);
+  stroke-width: 0.35;
+}
+
+.social {
+  fill: var(--surface);
+}
+
+.intimo {
+  fill: var(--accent-soft);
+}
+
+.servico {
+  fill: var(--surface-2);
+}
+
+.externo {
+  fill: color-mix(in srgb, var(--accent) 22%, var(--surface));
+}
+
+.label {
+  fill: var(--text);
+  font-family: var(--font-sans);
+  font-size: 2.3px;
+}
+
+.caption {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 8px 24px;
+  margin-top: 16px;
+  font-size: 0.8125rem;
+  color: var(--text-2);
+}
+
+.legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 16px;
+}
+
+.legend span {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.legend i {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border: 1px solid var(--text);
+}
+
+@media (max-width: 560px) {
+  .label {
+    font-size: 3.4px;
+  }
+}
+
+/* Amostras da legenda (elementos HTML usam background, não fill) */
+.legend i.social {
+  background: var(--surface);
+}
+
+.legend i.intimo {
+  background: var(--accent-soft);
+}
+
+.legend i.servico {
+  background: var(--surface-2);
+}
+
+.legend i.externo {
+  background: color-mix(in srgb, var(--accent) 22%, var(--surface));
+}

@@ -1,0 +1,69 @@
+.wrap {
+  display: grid;
+  gap: 10px;
+}
+
+.frame {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  overflow: hidden;
+}
+
+.iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.placeholder {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-content: center;
+  justify-items: center;
+  gap: 10px;
+  padding: 16px;
+  text-align: center;
+}
+
+.lines {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.lines path {
+  fill: none;
+  stroke: var(--border);
+  stroke-width: 6;
+}
+
+.pin {
+  position: relative;
+  color: var(--accent-ink);
+}
+
+.text {
+  position: relative;
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+}
+
+.placeholder button {
+  position: relative;
+  background: var(--surface);
+}
+
+.small {
+  position: relative;
+  font-size: 0.75rem;
+  color: var(--text-2);
+}
+
+.note {
+  font-size: 0.8125rem;
+  color: var(--text-2);
+}
